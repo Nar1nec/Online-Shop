@@ -1,0 +1,49 @@
+.container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .product-block {
+        display: flex;
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+    }
+
+    .product-block img {
+        max-width: 200px;
+        height: auto;
+        border-radius: 8px;
+        margin-right: 10px;
+    }
+
+    .product-details {
+        flex-grow: 1;
+    }
+
+    .remove-button {
+        background-color: #e74c3c;
+        color: white;
+        border: none;
+        padding: 15px 20px; /* увеличьте размер кнопки */
+        text-align: center;
+        text-decoration: none;
+        font-size: 14px;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-top: 20px;
+    }
+
+    .checkout-button {
+        background-color: #3498db;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 14px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 20px;
+    }

@@ -1,0 +1,40 @@
+{% extends "product/base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="/static/cart/css/cart.css">
+<script src="/static/cart/js/cart.js"></script>
+    <!-- Дополнительные теги head, если необходимо -->
+{% endblock %}
+
+{% block content %}
+        <h2>Ваша корзина</h2>
+    <div class="container">
+        <ul>
+            {% if cart_items %}
+                <ul>
+                    {% for item in cart_items %}
+                        <li>
+                            <div class="product-block">
+                                <img src="{{ item.product.image_path }}" alt="{{ item.product.name }}" width="100">
+                                <div class="product-details">
+                                    <p>{{ item.product.name }} - Количество: <span class="quantity">{{ item.quantity }}</span></p>
+                                    <p>Цена: <span class="price">{{ item.product.price }}</span> руб.</p>
+                                    <p>Общая стоимость: <span class="total">{{ item.quantity * item.product.price }}</span> руб.</p>
+                                </div>
+                                <!-- Дополнительная информация о продукте, если необходимо -->
+                                    <button class="remove-button" onclick="removeFromCart({{ item.id }})">Удалить из корзины</button>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <p id="total-price">Общая стоимость товаров: 0 руб.</p>
+            {% else %}
+                <p>Ваша корзина пуста.</p>
+            {% endif %}
+        </ul>
+    </div>
+<div>
+    ______
+</div>
+<a href="/checkout" class="button">Оформить заказ</a>
+{% endblock %}

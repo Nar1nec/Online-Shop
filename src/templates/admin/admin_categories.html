@@ -1,0 +1,25 @@
+{% extends "admin/admin.html" %}
+
+{% block head %}
+<script src="/static/admin/js/admin_categories.js"></script>
+{% endblock %}
+{% block content %}
+    <h2>Categories</h2>
+    <ul>
+        {% for category in categories %}
+            <li>
+                {{ category.name }}
+                <form action="/admin/delete_category/{{ category.id }}" method="post">
+                    <input type="submit" value="Delete">
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <h3>Add Category</h3>
+        <!-- Форма для добавления категории -->
+        <label for="category_name">Name:</label>
+        <input type="text" id="category_name" name="name" required>
+        <br>
+        <input type="button" onclick="addCat()" value="Add Category">
+{% endblock %}

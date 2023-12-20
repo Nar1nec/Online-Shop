@@ -1,0 +1,26 @@
+{% extends "product/base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="/static/product/css/product.css">
+<script src="/static/product/js/product.js"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <ul>
+            {% for product in products %}
+            <li>
+                <div class="product-block">
+                    <img src="{{ product.image_path }}" alt="{{ product.name }}" width="200">
+                    <div class="product-details">
+                        <h3>{{ product.name }}</h3>
+                        <p>Цена: {{ product.price }} руб.</p>
+                        <p>Описание: {{ product.description }}</p>
+                        <button class="buy-button" onclick="buyProduct({{ product.id }})">Купить</button>
+                    </div>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

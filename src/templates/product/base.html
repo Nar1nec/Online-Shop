@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" type="text/css" href="/static/product/css/base.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    {% block head %} {% endblock %}
+    <title>Техносеть</title>
+</head>
+<body class="flex flex-col min-h-screen">
+    <div class="container flex-grow">
+        <div class="navigation">
+            <ul class="flex gap-5 mb-3">
+                <li>
+                    <a href="#" class="text-black text-sm">Журнал</a>
+                </li>
+                <li>
+                    <a href="#" class="text-black text-sm">Акции</a>
+                </li>
+                <li>
+                    <a href="#" class="text-black text-sm">Конфигуратор</a>
+                </li>
+                <li>
+                    <a href="#" class="text-black text-sm">Доставка</a>
+                </li>
+                <li>
+                    <a href="#" class="text-black text-sm">Магазины</a>
+                </li>
+                <li>
+                    <a href="#" class="text-black text-sm">Обратная связь</a>
+                </li>
+            </ul>
+        </div>
+        <header class="flex justify-between text-3xl my-3" role="banner">
+            <div>
+                <a href="/pages/base">
+                    <span class="text-black">Техносеть</span>
+                </a>
+            </div>
+            <div>
+                <ul class="flex gap-5">
+                    <li>
+                        <a href="/pages/cart" class="button button-cart">Корзина</a>
+                    </li>
+                    <li>
+                        <a href="/pages/auth" class="button button-login">Войти</a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+
+        <div class="dropdown">
+            <span class="text-black button">Каталог</span>
+            <div class="dropdown-content">
+                <a href="/pages/product/adapter" class="text-sm">Wi-Fi адаптеры</a>
+                <a href="/pages/product/router" class="text-sm">Маршрутизаторы</a>
+                <a href="/pages/product/network adapter" class="text-sm">Сетевые адаптеры</a>
+            </div>
+        </div>
+    </div>
+
+   <main class="flex-grow">
+        <hr>
+        <div id="content">
+            {% block content %}
+            <section>
+                    <h2>Добро пожаловать в Техносеть!</h2>
+                    <p>
+                        Мы предоставляем широкий ассортимент высококачественной техники и гаджетов.
+                        От мощных Wi-Fi роутеров до современных сетевых адаптеров - у нас есть всё, что вам нужно
+                        для комфортного и современного образа жизни.
+                    </p>
+            </section>
+            {% endblock %}
+        </div>
+    </main>
+
+    <footer role="contentinfo">
+            <h3>Контактная информация</h3>
+            <p>Email: info@technoset.com</p>
+            <p>Телефон: +7 (123) 456-7890</p>
+            <p>Адрес: ул. Примерная, д. 123</p>
+    </footer>
+</body>
+</html>

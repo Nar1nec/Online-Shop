@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    {% block head %} {% endblock %}
+<link rel="stylesheet" href="/static/admin/css/admin.css">
+
+</head>
+<body>
+    <h1>Admin Page</h1>
+
+    <div class="content">
+        <!-- Секция для боковой панели -->
+        <div class="sidebar">
+            <h2>Navigation</h2>
+            <ul>
+                <li><a href="/pages/admin/products">Products</a></li>
+                <li><a href="/pages/admin/categories">Categories</a></li>
+            </ul>
+        </div>
+
+        <!-- Основной контент -->
+        <div class="main-content">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+</body>
+</html>
